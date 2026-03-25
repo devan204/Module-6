@@ -4,39 +4,87 @@
 ---
 
 ### AIM  
-To write a Python program to perform division of two complex numbers using the binary '/' operator overloading. Class name: `Complex`, where the objects `Ob1 = Complex(10, 21)` and `Ob2 = Complex(2, 3)` represent complex numbers.
+To write a Python program to compute the product of two complex numbers by overloading the binary '+' operator using a class named complex.
 
----
 
 ### ALGORITHM
 
-1. **Start the Program.**
-2. **Define the Complex class**:
-   - Define the constructor `__init__()` to accept two parameters: `real` and `imag` (representing the real and imaginary parts of the complex number).
-   - Assign these values to `self.real` and `self.imag` respectively.
-3. **Define the `__truediv__()` method** to perform the division of two complex numbers:
-   - Calculate the real part of the result as the division of `self.real` by `other.real`.
-   - Calculate the imaginary part of the result as the division of `self.imag` by `other.imag`.
-   - Return a new Complex object with the calculated real and imaginary parts.
-4. **Define the `__repr__()` method** to represent the complex number as a string.
-   - Return a string formatted to display the real and imaginary parts with one decimal place using `f"{self.real:.1f}, {self.imag:.1f}"`.
-5. **Create two objects of the Complex class**:
-   - `Ob1 = Complex(10, 21)` represents the complex number `10 + 21i`.
-   - `Ob2 = Complex(2, 3)` represents the complex number `2 + 3i`.
-6. **Perform the division operation**: Use the `/` operator to divide `Ob1` by `Ob2`. This will call the `__truediv__()` method.
-7. **Print the result**: Print the result of the division, which will be formatted by the `__repr__()` method.
-8. **End the Program.**
+Define a Class:
+
+Create a class named complex to represent complex numbers with real and imaginary parts.
+
+Constructor (__init__):
+
+Initialize two instance variables, a for the real part and b for the imaginary part.
+
+Overload the + Operator:
+
+Define the __add__ method to overload the + operator.
+
+Instead of addition, perform multiplication of the complex numbers using the formula:
+
+(
+𝑎
++
+𝑏
+𝑖
+)
+⋅
+(
+𝑐
++
+𝑑
+𝑖
+)
+=
+(
+𝑎
+𝑐
+−
+𝑏
+𝑑
+)
++
+(
+𝑎
+𝑑
++
+𝑏
+𝑐
+)
+𝑖
+(a+bi)⋅(c+di)=(ac−bd)+(ad+bc)i
+Create Objects:
+
+Create two instances of the complex class with required real and imaginary parts.
+
+Perform Operation:
+
+Use the overloaded + operator to compute the product and display the result.
+
+
 
 ---
 
 ### PROGRAM
 
 ```
-
+class complex:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+     # adding two objects
+    def __add__(self, other):
+        return self.a * other.a, self.b * other.b
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+Ob3 = Ob1 + Ob2
+print(Ob3)
 ```
 
 ### OUTPUT
+![Screenshot (250)](https://github.com/user-attachments/assets/d2f00f9a-c95a-458b-80d1-f3f78a3a024b)
 
 
 ### RESULT
-
+Thus the python program was initiated and executed successfully.
