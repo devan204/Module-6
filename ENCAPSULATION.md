@@ -1,39 +1,89 @@
-# Exp.No:29  
-## Encapsulation
+# Exp.No:30  
+## IMPLEMENTATION OF ABSTRACT BASE CLASS USING POLYMORPHISM IN SHAPE SUBCLASSES
 
 ---
 
 ### AIM  
-To write a Python program to create a class `Student` with the private members `name` and `age`, and add getter and setter methods to initialize and modify the `age` variable.
+To create an abstract base class named Polygon with an abstract method sides(), and implement this method in its subclasses Triangle, Square, Pentagon, and Hexagon. Then, create objects of each subclass and call the sides() method to display the number of sides for each polygon.
 
 ---
 
 ### ALGORITHM
 
-1. **Start the Program.**
-2. **Define the `Student` class.**
-   - Inside the `Student` class, define the `__init__` method to initialize `name` and the private member `__age`.
-3. **Define a getter method** `get_age` to return the value of the private member `__age`.
-4. **Define a setter method** `set_age` to set a new value to the private member `__age`.
-5. **Create an object `stud`** of the `Student` class with the name 'Jessa' and age 14.
-6. **Print the name and the age** of `stud` using the getter method.
-7. **Use the setter method** `set_age` to change the age of `stud` to 16.
-8. **Print the name and the updated age** of `stud` using the getter method.
-9. **End the program.**
+Import Required Module:
+
+Import ABC and abstractmethod from the abc module.
+
+Define the Abstract Base Class:
+
+Create a class named Polygon that inherits from ABC.
+
+Define an abstract method sides() using the @abstractmethod decorator.
+
+Define Subclasses:
+
+Create classes Triangle, Square, Pentagon, and Hexagon that inherit from Polygon.
+
+In each subclass, override and implement the sides() method to display the number of sides for that polygon.
+
+Driver Code:
+
+Create objects of each subclass.
+
+Call the sides() method for each object.
 
 ---
 
 ### PROGRAM
 
 ```
+from abc import ABC,abstractmethod  
+  
+class Polygon(ABC):   
+  
+   @abstractmethod   
+   def sides(self):   
+      pass  
+  
+class Triangle(Polygon):
+    def sides(self):
+        print("Triangle has 3 sides")   
+  
+class Pentagon(Polygon): 
+    def sides(self):
+        print("Pentagon has 5 sides")
+  
+     
+   #Add code here
+class Hexagon(Polygon):
+    def sides(self):
+        print("Hexagon has 6 sides")
+  
+   #Add your code
+class square(Polygon):
+    def sides(self):
+        print("I have 4 sides")   
+  
+# Driver code   
+t = Triangle()
+t.sides()
+ 
+  
+s = square()
+s.sides()
+  
+  
+p = Pentagon() 
+p.sides()
 
-
-
+  
+k = Hexagon()
+k.sides()
 ```
 
 ### OUTPUT
+![Screenshot (252)](https://github.com/user-attachments/assets/18bf4bf8-0ccf-4a8d-83c3-0aa693034f29)
 
 
 ### RESULT
-
-
+Thus the python program was initialised and executed successfully.
